@@ -6,20 +6,20 @@
    <title>Contacto</title>
   </head>
   <body>
-     
+  {{$nombre}}
    <form action="/recibe-form-Contacto" method="POST">
     @csrf
     
     <label for="nombre">Nombre:</label><br>
-    <input type="text"  name="nombre" id="nombre" Value="{{$codigo}}">
+    <input type="text"  name="nombre"  Value="{{old('nombre')}}">
     @error('nombre')
         <i>{{ $message }}</i>
     @enderror
     </br>
 
     <label for="Mail">Mail:</label><br>
-    <input type="email"  name="Mail" id="Mail" Value="{{$codigo}}"> 
-    @error('email')
+    <input type="email"  name="Mail" Value="{{$email}}"> 
+    @error('Mail')
         <i>{{ $message }}</i>
     @enderror
     
